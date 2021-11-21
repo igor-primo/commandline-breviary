@@ -1,0 +1,25 @@
+
+[Lectio5]
+@Sancti/10-DU:Lectio4:s/Ponieważ .* Oddawna/Oddawna/s s/Lecz, .*//s
+
+[Lectio6]
+@Sancti/10-DU:Lectio4:s/.* Lecz, /Lecz, /s
+
+[Lectio7]
+@Sancti/10-DU:Lectio5:s/.* Aby zaś /Aby zaś /s s/, zwaną.*/./s
+
+[Lectio8]
+@Sancti/10-DU:Lectio6:s/Albowiem, .* świata.//s s/który .* odrodzenie://s s/Przeto.*//s
+
+[Lectio9]
+@Sancti/10-DU:Lectio7:s/Czy tylko .*//s
+
+[Lectio10]
+@Sancti/10-DU:Lectio7:s/.* Czy tylko /Czy tylko /s
+
+[Lectio11]
+@Sancti/10-DU:Lectio8:s/Mógł zaś .*//s
+
+[Lectio12]
+@Sancti/10-DU:Lectio8:s/.* Mógł zaś /Mógł zaś /s
+

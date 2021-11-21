@@ -1,0 +1,340 @@
+[Rank]
+Dominica Pentecostes;;Duplex I Classis cum Octava privilegiata I ordinis;;7
+
+[Rule]
+1 Nocturn
+Psalmi Dominica;
+Antiphonas horas
+Hymnus Tertia
+Prima=53
+
+[Ant Vespera]
+Comme s’achevaient * les jours de la Pentecôte, ils étaient tous ensemble dans le même lieu, alléluia.
+L’Esprit du Seigneur * a rempli l’univers, alléluia.
+Ils furent tous remplis * du Saint-Esprit et ils commencèrent à parler, alléluia, alléluia.
+Sources et tous * les êtres qui se meuvent dans les eaux, dites un hymne à Dieu, alléluia.
+Les Apôtres * proclamaient en diverses langues les grandes œuvres de Dieu, alléluia, alléluia, alléluia.;;116
+
+[Capitulum Vespera]
+!Act. 2:1-2
+v. Comme s’achevaient les jours de la Pentecôte, les disciples étaient tous ensemble dans le même lieu. Et, tout à coup, du ciel, se fit entendre un bruit pareil à celui de l’arrivée d’un vent violent et il remplit toute la maison où ils étaient assis.
+$Deo gratias
+
+[HymnusM Vespera]
+v. Venez Esprit Créateur, 
+Visitez les âmes qui sont à Vous,
+Remplissez de la grâce d’en-haut
+Les cœurs que vous avez créés.
+_
+On Vous appelle Paraclet,
+Don du Dieu très-haut,
+Source vive, feu, amour
+Et onction spirituelle.
+_
+C’est Vous l’Esprit aux sept dons,
+Le doigt de la droite paternelle,
+C’est Vous la promesse du Père
+Qui enrichissez nos langues en leur donnant la parole.
+_
+Allumez la lumière en nos esprits,
+Répandez l’amour dans nos cœurs,
+Vous qui affermissez d’une vertu indéfectible
+Les faiblesses dues à notre corps.
+_
+Repoussez l’ennemi au loin
+Et donnez la paix sans tarder.
+Ainsi, guidés et précédés par Vous,
+Nous éviterons tout mal.
+_
+Accordez-nous, par Vous, de connaître le Père
+Et de connaître aussi le Fils
+Et qu’en Vous, Esprit de l’Un et de l’Autre,
+Nous croyions en tout temps.
+_
+A Dieu le Père soit la gloire
+Et au Fils qui ressuscita des morts
+Et au Paraclet
+Dans les siècles des siècles. Amen.
+
+[Hymnus Vespera]
+{:H-Venicreator:}
+!Prima stropha hymni sequentis dicitur flexibus genibus.
+v. Venez Esprit Créateur, 
+Visitez les âmes qui sont à Vous,
+Remplissez de la grâce d’en-haut
+Les cœurs que vous avez créés.
+_
+On Vous appelle Paraclet,
+Don du Dieu très-haut,
+Source vive, feu, amour
+Et onction spirituelle.
+_
+C’est Vous l’Esprit aux sept dons,
+Le doigt de la droite paternelle,
+C’est Vous la promesse du Père
+Qui enrichissez nos langues en leur donnant la parole.
+_
+Allumez la lumière en nos esprits,
+Répandez l’amour dans nos cœurs,
+Vous qui affermissez d’une vertu indéfectible
+Les faiblesses dues à notre corps.
+_
+Repoussez l’ennemi au loin
+Et donnez la paix sans tarder.
+Ainsi, guidés et précédés par Vous,
+Nous éviterons tout mal.
+_
+Accordez-nous, par Vous, de connaître le Père
+Et de connaître aussi le Fils
+Et qu’en Vous, Esprit de l’Un et de l’Autre,
+Nous croyions en tout temps.
+_
+A Dieu le Père soit la gloire
+Et au Fils qui ressuscita des morts
+Et au Paraclet
+Dans les siècles des siècles. Amen.
+
+[Versum 1]
+V. Ils furent tous remplis de l’Esprit-Saint, alléluia.
+R. Et ils commencèrent à parler, alléluia.
+
+[Ant 1]
+Je ne vous laisserai pas orphelins, alléluia. Je m’en vais et Je viendrai à vous, alléluia. Et votre cœur se réjouira, alléluia.
+
+[Oratio]
+O Dieu qui, aujourd’hui, avez instruit les cœurs des fidèles par l’illumination du Saint-Esprit, donnez-nous par ce même Esprit, de goûter ce qui est bien et de jouir sans cesse de sa consolation. 
+$Per Dominum eiusdem
+
+[Invit]
+Allelúja, Spíritus Dómini replévit orbem terrárum: * Veníte, adorémus, allelúja.
+
+[Hymnus Matutinum]
+{:H-JamChristus astra:}v. Jam Christus astra ascénderat,
+Revérsus unde vénerat,
+Patris fruéndum múnere,
+Sanctum datúrus Spíritum.
+_
+Solémnis urgébat dies,
+Quo mýstico septémplici
+Orbis volútus sépties,
+Signat beáta témpora.
+_
+Cum lucis hora tértia
+Repénte mundus íntonat,
+Apóstolis orántibus
+Deum veníre núntiat.
+_
+De Patris ergo lúmine
+Decórus ignis almus est,
+Qui fida Christi péctora
+Calóre Verbi cómpleat.
+_
+Impléta gaudent víscera,
+Affláta Sancto Spíritu,
+Vocésque divérsas sonant,
+Fantur Dei magnália.
+_
+Notíque cunctis Géntibus,
+Græcis, Latínis, Bárbaris,
+Simúlque demirántibus,
+Linguis loquúntur ómnium.
+_
+Judǽa tunc incrédula,
+Vesána torvo spiritu,
+Madére musto sóbrios
+Christi fidéles íncrepat.
+_
+Sed éditis miráculis
+Occúrrit, et docet Petrus,
+Falsum profári pérfidos,
+Joéle teste cómprobans.
+_
+Deo Patri sit gloria,
+Et Fílio, qui a mórtuis
+Surréxit, ac Paráclito,
+In sæculórum sǽcula.
+Amen.
+
+[Ant Matutinum]
+Factus est * repénte de cælo sonus adveniéntis spíritus veheméntis, allelúja, allelúja.;;47
+Confírma hoc, Deus, * quod operátus es in nobis: a templo sancto tuo, quod est in Jerúsalem, allelúja, allelúja.;;67
+Emítte Spíritum tuum, * et creabúntur: et renovábis fáciem terræ, allelúja, allelúja.;;103
+V. Spíritus Dómini replévit orbem terrárum, allelúja.
+R. Et hoc quod cóntinet ómnia, sciéntiam habet vocis, allelúja.
+
+[Lectio1]
+Léctio sancti Evangélii secúndum Joánnem
+!Joannes 14:23-31
+In illo témpore: Dixit Jesus discípulis suis: Si quis díligit me, sermónem meum servábit, et Pater meus díliget eum, et ad eum veniémus, et mansiónem apud eum faciémus. Et réliqua.
+_
+Homilía sancti Gregórii Papæ
+!Homilia 30 in Evangelia
+Libet, fratres caríssimi, evangélicæ verba lectiónis sub brevitáte transcúrrere, ut post diútius líceat in contemplatióne tantæ solemnitátis immorári. Hódie namque Spíritus Sanctus repentíno sónitu super discípulos venit, mentésque carnálium in sui amórem permutávit, et foris apparéntibus linguis ígneis, intus facta sunt corda flammántia; quia dum Deum in ignis visióne suscepérunt, per amórem suáviter arsérunt. Ipse namque Spíritus Sanctus amor est: unde et Joánnes dicit Deus cáritas est. Qui ergo mente íntegra Deum desíderat, profécto jam habet, quem amat. Neque enim quisquam posset Deum dilígere, si eum quem díligit, non habéret.
+
+[Responsory1]
+R. Cum compleréntur dies Pentecóstes, erant omnes páriter in eodem loco, allelúja: et súbito factus est sonus de cælo, allelúja,
+* Tamquam spíritus veheméntis, et replévit totam domum, allelúja, allelúja.
+V. Dum ergo essent in unum discípuli congregáti propter metum Judæórum, sonus repénte de cælo, venit super eos.
+R. Tamquam spíritus veheméntis, et replévit totam domum, allelúja, allelúja.
+
+[Lectio2]
+Sed ecce, si unusquísque vestrum requirátur an díligat Deum: tota fidúcia et secúra mente respóndet, Díligo. In ipso autem lectiónis exórdio audístis quid Véritas dicit: Si quis díligit me, sermónem meum servábit. Probátio ergo dilectiónis, exhibítio est óperis. Hinc in epístola sua idem Joánnes dicit: Qui dicit: Díligo Deum, et mandáta ejus non custódit, mendax est. Vere étenim Deum dilígimus et mandáta ejus custodímus, si nos a nostris voluptátibus coarctámus. Nam qui adhuc per illícita desidéria díffluit, profécto Deum non amat: quia ei in sua voluntáte contradícit.
+
+[Responsory2]
+R. Repléti sunt omnes Spíritu Sancto: et cœpérunt loqui, prout Spíritus Sanctus dabat éloqui illis: 
+* Et convénit multitúdo dicéntium, allelúja.
+V. Loquebántur váriis linguis Apóstoli magnália Dei.
+R. Et convénit multitúdo dicéntium, allelúja.
+&Gloria
+R. Et convénit multitúdo dicéntium, allelúja.
+
+[Lectio3]
+Et Pater meus díliget eum, et ad eum veniémus, et mansiónem apud eum faciémus. Pensáte, fratres caríssimi, quanta sit ista dígnitas, habére in cordis hospítio advéntum Dei. Certe, si domum nostram quisquam dives aut prǽpotens amícus intráret, omni festinántia domus tota mundarétur, ne quid fortásse esset, quod óculos amíci intrántis offénderet. Tergat ergo sordes pravi óperis, qui Deo prǽparat domum mentis. Sed vidéte quid Véritas dicat: Veniémus, et mansiónem apud eum faciémus. In quorúmdam étenim corda venit, et mansiónem non facit: quia, per compunctiónem quidem, Dei respéctum percípiunt, sed tentatiónis témpore hoc ipsum quo compúncti fúerant, obliviscúntur; sicque ad perpetránda peccáta rédeunt, ac si hæc mínime planxíssent.
+&teDeum
+
+[Ant Laudes]
+@:Ant Vespera:s/;.*//
+
+[Capitulum Laudes]
+@:Capitulum Vespera
+
+[HymnusM Laudes]
+v. Le cycle de l’année nous a ramené
+Les joies bienheureuses du jour
+Où l’Esprit Paraclet
+A envahi les Apôtres.
+_
+Le feu à l’éclat vibrant
+A pris la forme de langue
+Pour qu’ils fussent abondants en paroles
+Et brûlants de charité.
+_
+Ils parlent les langues de tous ;
+Les foules des gentils sont dans la stupeur.
+Ils croient pris de vin nouveau
+Ceux que l’Esprit avait comblés.
+_
+Ces choses se sont accomplies selon le mystère,
+Lorsque le temps de la Pâque fut accompli,
+Dans le cycle sacré des jours
+Où se fait légalement la remise des dettes.
+_
+C’est Vous, maintenant, Dieu très bon
+Que nous prions, prosternés ;
+Accordez-nous les dons de l’Esprit,
+Qui nous viennent du ciel.
+_
+Ces cœurs récemment consacrés,
+Vous les avez remplis de Votre grâce.
+Remettez-nous nos crimes
+Et donnez-nous des jours paisibles.
+_
+A Dieu le Père soit la gloire
+Et au Fils qui ressuscita des morts
+Et au Paraclet
+Dans les siècles des siècles, amen.
+
+[Hymnus Laudes]
+{:H-Beatanobisgaudia:}v. Le cycle de l’année nous a ramené
+Les joies bienheureuses du jour
+Où l’Esprit Paraclet
+A envahi les Apôtres.
+_
+Le feu à l’éclat vibrant
+A pris la forme de langue
+Pour qu’ils fussent abondants en paroles
+Et brûlants de charité.
+_
+Ils parlent les langues de tous ;
+Les foules des gentils sont dans la stupeur.
+Ils croient pris de vin nouveau
+Ceux que l’Esprit avait comblés.
+_
+Ces choses se sont accomplies selon le mystère,
+Lorsque le temps de la Pâque fut accompli,
+Dans le cycle sacré des jours
+Où se fait légalement la remise des dettes.
+_
+C’est Vous, maintenant, Dieu très bon
+Que nous prions, prosternés ;
+Accordez-nous les dons de l’Esprit,
+Qui nous viennent du ciel.
+_
+Ces cœurs récemment consacrés,
+Vous les avez remplis de Votre grâce.
+Remettez-nous nos crimes
+Et donnez-nous des jours paisibles.
+_
+A Dieu le Père soit la gloire
+Et au Fils qui ressuscita des morts
+Et au Paraclet
+Dans les siècles des siècles.
+Amen.
+
+[Versum 2]
+@:Versum 1
+
+[Ant 2]
+Recevez * le Saint-Esprit ; ceux à qui vous remettrez les péchés, ils leur seront remis, alléluia.
+
+[Lectio Prima]
+!Act. 2:11
+v. Judǽi quoque et Prosélyti, Cretes et Arabes: audívimus eos loquéntes nostris linguis magnália Dei.
+
+[Hymnus Tertia]
+@:Hymnus Vespera
+
+[Capitulum Tertia]
+@:Capitulum Vespera
+
+[Responsory Tertia]
+R.br. Spíritus Dómini replévit orbem terrárum, * Allelúja, allelúja.
+R. Spíritus Dómini replévit orbem terrárum, * Allelúja, allelúja.
+V. Et hoc quod cóntinet ómnia, sciéntiam habet vocis.
+R. Allelúja, allelúja.
+&Gloria
+R. Spíritus Dómini replévit orbem terrárum, * Allelúja, allelúja.
+_
+V. Spíritus Paráclitus, allelúja.
+R. Docébit vos ómnia, allelúja.
+
+[Capitulum Sexta]
+!Act. 2:6
+v. Facta autem hac voce, convénit multitúdo, et mente confúsa est, quóniam audiébat unusquísque lingua sua illos loquéntes.
+$Deo gratias
+
+[Responsory Sexta]
+R.br. Spíritus Paráclitus, * Allelúja, allelúja.
+R. Spíritus Paráclitus, * Allelúja, allelúja.
+V. Docébit vos ómnia. 
+R. Allelúja, allelúja.
+&Gloria
+R. Spíritus Paráclitus, * Allelúja, allelúja.
+_
+V. Repléti sunt omnes Spíritu Sancto, allelúja.
+R. Et cœpérunt loqui, allelúja.
+
+[Capitulum Nona]
+@:Lectio Prima
+$Deo gratias
+
+[Responsory Nona]
+R.br. Repléti sunt omnes Spíritu Sancto, * Allelúja, allelúja.
+R. Repléti sunt omnes Spíritu Sancto, * Allelúja, allelúja.
+V. Et cœpérunt loqui.
+R. Allelúja, allelúja.
+&Gloria
+R. Repléti sunt omnes Spíritu Sancto, * Allelúja, allelúja.
+_
+V. Loquebántur váriis linguis Apóstoli, allelúja.
+R. Magnália Dei, allelúja.
+
+[Versum 3]
+V. Les Apôtres célébraient en diverses langues, alléluia.
+R. Les grandes œuvres de Dieu, alléluia.
+
+[Ant 3]
+Aujourd’hui sont accomplis les jours de la Pentecôte, alléluia. Aujourd’hui, l’Esprit-Saint est apparu sous forme de feu aux disciples. Il leur a conféré les dons des charismes ; Il les a envoyés dans le monde entier prêcher et rendre témoignage. Celui qui croira et sera baptisé sera sauvé, alléluia.
+
+[Ant Vespera 3]
+@:Ant Vespera:s/;.*//

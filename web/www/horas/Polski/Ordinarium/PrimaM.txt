@@ -1,0 +1,111 @@
+#Incipit
+$Deus in adjutorium
+&Gloria
+&Alleluia
+
+#Hymnus
+v. Gdy już wzeszła gwiazda światła,
+Kornie prośmy Boga,
+By w czynnościach dziennych
+Zachował nas od szkody.
+_
+Niech powściągając miarkuje język,
+By nie rozbrzmiewała groza waśni:
+Niechaj życzliwie chroni wzrok nasz,
+By się nie poił próżnością.
+_
+Niech czyste będzie wnętrze serca,
+I niech odstąpi nierozum;
+Niechaj hardość ciała skruszy
+Skąpość napoju i pokarmu.
+_
+Abyśmy, gdy dzień przejdzie,
+A kolejność znów sprowadzi noc,
+Czyści przez wstrzemięźliwość
+Śpiewali mu chwałę.
+_
+* Bogu Ojcu niechaj będzie chwała,
+I jedynemu jego Synowi,
+Wraz z Duchem Pocieszycielem,
+Teraz i po wszystek wiek.
+Amen.
+
+#Psalmi
+
+#Capitulum Versus
+$Deo gratias
+_
+V. Powstań, Chryste, wspieraj nas.
+R. I wyzwól nas dla imienia Twego.
+
+#Orationes
+$MLitany2
+_
+&Dominus_vobiscum
+$Oremus
+v. Panie Boże wszechmogący, który bezpiecznie nas doprowadziłeś do początku dnia dzisiejszego: ochraniaj nas dzisiaj Swą mocą; abyśmy się tego dnia nie skłonili do żadnego grzechu, ale zawsze kierowali swoje myśli i uczynki do czynienia twojej sprawiedliwości.
+$Per Dominum
+
+#Conclusio
+&Dominus_vobiscum
+&Benedicamus_Domino
+
+!Here Prima finishes rest is optional
+
+&martyrologium
+_
+V. Cenna jest w oczach Pana.
+R. Śmierć świętych Jego.
+v. Święta Maryja i wszyscy święci niech się wstawiają za nami u Pana, abyśmy zasłużyli na Jego pomoc i zbawienie, który żyje i króluje na wieki wieków.
+R. Amen.
+
+V. Boże, wejrzyj ku wspomożeniu memu.
+R. Panie, pośpiesz ku ratunkowi memu.
+V. Boże, wejrzyj ku wspomożeniu memu.
+R. Panie, pośpiesz ku ratunkowi memu.
+V. Boże, wejrzyj ku wspomożeniu memu.
+R. Panie, pośpiesz ku ratunkowi memu.
+&Gloria
+_
+$MLitany2
+V. Wejrzyj na sługi Swoje, Panie, i na dzieła Twoje, i prowadź ich dzieci.
+R. I niech jasność Pana Boga naszego będzie nad nami, i prowadź pracę rąk naszych, i dzieła rąk naszych prowadź.
+&Gloria
+v. Módlmy się.
+v. Panie Boże, królu nieba i ziemi, racz dzisiaj prowadzić i uświęcać, władać i kierować, serca i ciała nasze, zmysły, słowa i czyny nasze według prawa Twojego, i według przykazań Twoich: abyśmy teraz i w wieczności, przez Ciebie wspierani, zasłużyli na zbawienie i wyzwolenie, Zbawicielu świata: 
+v. Który żyjesz i królujesz na wieki wieków.
+R. Amen.
+
+V. Pobłogosław, ojcze.
+Benedictio. Dniem i czynami naszymi niech w swoim pokoju rozporządza Pan wszechmogący. Amen.
+_
+&regula
+
+#Lectio brevis
+V. Ty zaś, Panie, zmiłuj się nad nami.
+R. Bogu niech będą dzięki.
+
+#Commemoratio defunctorum
+R.br. Wspomnienie wszystkich braci, przyjaciół naszego Zakonu i naszych dobroczyńców.
+V. Niech odpoczywają w pokoju.
+R. Amen
+_
+&psalm(129)
+_
+V. Od bram piekielnych.
+R. Zabierz, Panie, ich dusze.
+V. Niech odpoczywają w pokoju.
+R. Amen.
+_
+V. Panie, wysłuchaj modlitwy mojej.
+R. A wołanie moje niech do Ciebie przyjdzie.
+_
+&Dominus_vobiscum2
+$Oremus
+v. Boże, dawco zbawienia i miłośniku ludzkiego zbawienia: prosimy dobroć Twoją: abyś braci naszego zgromadzenia, naszych bliskich i dobroczyńców, którzy odeszli z tego świata, za wstawienictwem błogosławionej Maryi zawsze dziewicy i wszystkich świętych Twoich, obdarzył wieczną radością.
+$Per Dominum
+_
+V. Wieczny odpoczynek racz im dać, Panie.
+R. A światłość wiekuista niechaj im świeci.
+V. Niech odpoczywają w pokoju.
+R. Amen.

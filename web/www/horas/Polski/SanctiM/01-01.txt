@@ -1,0 +1,14 @@
+[Lectio9]
+@Sancti/01-01:Lectio7:s/Widzisz,.*//s
+
+[Lectio10]
+@Sancti/01-01:Lectio7:s/.* Widzisz,/Widzisz,/s
+@Sancti/01-01:Lectio8:s/Wreszcie,.*//s
+
+[Lectio11]
+@Sancti/01-01:Lectio8:s/.* Wreszcie,/Wreszcie,/s s/$/~/
+@Sancti/01-01:Lectio9:s/Jeślibyśmy .*//s
+
+[Lectio12]
+@Sancti/01-01:Lectio9:s/.* Jeślibyśmy /Jeślibyśmy /s
+

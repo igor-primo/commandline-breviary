@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cdur=$(echo "$(pwd)" | sed 's/\//\\\//g')
+str="s/\(^CDUR=.*\)/\1${cdur}/g"
+sed "$str" brev > brev

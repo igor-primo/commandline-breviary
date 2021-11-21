@@ -1,0 +1,28 @@
+[AntMatutinumM]
+Plastr miodu płynący * wargi twoje, oblubienico! miód i mleko pod językiem twoim: a wonność szat twoich, jako wonność kadzidła.;;47
+Zdrój ogrodów, studnia wód żywych, które płyną pędem z Libanu.;;84
+Jako weselących się * wszystkich mieszkanie jest w tobie, święta Boża Rodzicielko.;;86
+Raduj się Maryjo Dziewico, * któraś sama zniszczyła wszystkie herezje w całym świecie.;;95
+Stąpiłem * do ogroda orzechowego, abym oglądał jabłka na dolinach i obaczył, jeźli zakwitła winnica, a jeźli zrodziły jabłka granatowe, alleluja.;;98
+
+[Ant Matutinum 3N]
+Ogrodemś zamknionym jest, * święta Boża Rodzicielko: ogród zamkniony, zdrój zapieczętowany: powstań rychle, przyjaciółko moja i przyjdź.
+
+[Lectio7]
+@Sancti/08-15:Lectio6:s/, stąd.*/./s
+
+[Lectio8]
+@Sancti/08-15:Lectio6:s/.* stąd./Stąd/s
+
+[Lectio9]
+@Sancti/08-15:Lectio7:s/ Nie ma.*//s
+
+[Lectio10]
+@Sancti/08-15:Lectio7:s/.* Nie ma/Nie ma/s
+
+[Responsory11]
+R. Dzisiaj Marja Dziewica do nieba wstąpiła: radujcie się, 
+* Bo z Chrystusem na wieki króluje.
+V. Marja wzięta jest do Nieba: radują się Aniołowie, wychwalając błogosławią Pana.
+R. Bo z Chrystusem na wieki króluje.
+

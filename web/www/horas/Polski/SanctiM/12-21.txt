@@ -1,0 +1,9 @@
+[Lectio9]
+@Sancti/12-21:Lectio7:s/Więcej .*//s
+
+[Lectio10]
+@Sancti/12-21:Lectio7:s/.* Więcej /Więcej /s
+@Sancti/12-21:Lectio8:s/Dotknąwszy .*//s
+
+[Lectio11]
+@Sancti/12-21:Lectio8:s/.* Dotknąwszy /Dotknąwszy /s

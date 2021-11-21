@@ -1,0 +1,10 @@
+[Lectio10]
+@Sancti/11-30:Lectio8:s/Co więc, naj.*//s
+
+[Lectio11]
+@Sancti/11-30:Lectio8:s/.* Co więc, naj/Co więc, naj/s s/$/~/
+@Sancti/11-30:Lectio9:s/Jednakże.*//s
+
+[Lectio12]
+@Sancti/11-30:Lectio9:s/.*Jednakże/Jednakże/s
+

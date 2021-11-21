@@ -1,0 +1,286 @@
+#!/bin/bash
+
+usage()
+{
+    cat << EOF
+
+Usage: $0 [OPTIONS]
+
+This script generates the office texts in EPUB format for one or several years.
+
+OPTIONS:
+   -h          Show this message
+
+   -y NUMBER   The first year to generate the office for (e.g. 2017).
+               Defaults to the current year.
+
+   -t NUMBER   The last year to generate the office for (e.g. 2018).
+               Defaults to the current year.
+
+   -p          If specified, generate the officium for a priest
+               ("Dominus Vobiscum" instead of "Domine, exaudi orationem meam").
+
+   -v          If specified, generate the Parvum B.M.V. votive office.
+
+   -m          Generate Mass propers in addition to office texts.
+
+   -r RUBRICS  The rubrics to use. Defaults to 1960.
+               Supported values are: 1570, 1910, DA, 1955, 1960, Newcal, Dominican, Monastic
+
+   -c FILENAME The cover image to use without path. It must be a file in the data
+               directory. Defaults to "cover.jpg".
+
+   -o PATH     The output directory. Defaults to the current directory.
+
+EOF
+
+ #generation of a bilingual office is not yet fully implemented, so do not document this option until it is implemented.
+ #-l      Also generate a second language (e.g. English, Deutsch, Italiano, Magyar, Polski).
+}
+
+#default values for input variables
+BLANG=Latin
+YEAR_FROM=`date +%Y`
+YEAR_TO=$YEAR_FROM
+PRIEST='' #has to be empty or '&priest=yes'
+VOTIVE='' #='C12' for Parvum B.M.V.
+MISSA='' #=1 to include Mass propers
+CDUR=
+RUBRICS_CODE=1960
+RUBRICS=Rubrics%201960
+RUBRICS_NAME=
+
+HOUR=''
+JUST_TODAY_TXT=1
+JUST_TODAY_XHTML=''
+
+#constants
+#supported rubrics as in Eofficium.pl
+ALL_RUBRICS_CODES=(Monastic 1570 1910 DA 1955 1960 Newcal Dominican)
+ALL_RUBRICS=("Monastic" "Trident 1570" "Trident 1910" "Divino Afflatu" "Reduced 1955" "Rubrics 1960" "1960 Newcalendar" "Ordo Praedicatorum")
+ALL_RUBRICS_NAME=("_Monastic" "_1570" "_1910" "_DA" "_1955" "" "NC")
+
+YEAR_RE='^[0-9]+$'
+
+#parse parameters
+while getopts "hy:t:pvmr:wbs:" OPTION
+do
+     case $OPTION in
+         h)
+             usage
+             exit 1
+             ;;
+         y)
+             YEAR_FROM=$OPTARG
+             #make sure the value is a year number
+             if ! [[ $YEAR_FROM =~ $YEAR_RE ]] ; then
+               echo "Invalid year number." >&2; exit 1
+             fi
+
+             ;;
+         t)
+             YEAR_TO=$OPTARG
+             #make sure the value is a year number
+             if ! [[ $YEAR_TO =~ $YEAR_RE ]] ; then
+               echo "Invalid year number." >&2; exit 1
+             fi
+             ;;
+         p)
+             PRIEST='&priest=yes'
+             ;;
+         v)
+             VOTIVE='C12'
+             ;;
+         m)
+	       	 MISSA=1
+	         ;;
+         r)
+             RUBRICS_CODE=$OPTARG
+             #make sure the value is one of the expected values
+             for i in $(seq 0 ${#ALL_RUBRICS_CODES[@]}); do
+                if [[ ${ALL_RUBRICS_CODES[$i]} == $RUBRICS_CODE ]]; then
+                  RUBRICS=${ALL_RUBRICS[$i]}
+                  RUBRICS_NAME=${ALL_RUBRICS_NAME[$i]}
+                  continue 2
+                fi
+             done
+             echo "Invalid version." >&2; exit 1
+             ;;
+		 w)
+		 	 JUST_TODAY_TXT=''
+			 #will print the offices of the whole year
+			 ;;
+		 x)
+		 	 JUST_TODAY_TXT=''
+			 JUST_TODAY_XHTML=1
+			 ;;
+		 o)
+		 	 HOUR=$OPTARG
+			 P=("Matutinum" "Laudes" "Prima" "Tertia" "Sexta" "Nona" "Vespera" "Completorium")
+			 if [[ ! " ${P[*]} " =~ " ${HOUR} " ]]; then
+			 	echo "Possible values for HOUR: Matutinum, Laudes, Prima, Tertia, Sexta, Nona, Vespera, Completorium"
+				exit 1
+			 fi
+			 ;;
+         ?)
+             usage
+             exit
+             ;;
+     esac
+done
+
+#other paths and file names, not specified by parameters
+EOFFICCIUMCMD=$CDUR/EofficiumXhtml.pl #the command to launch the genarator
+EMISSACMD=$CDUR/../../../web/cgi-bin/missa/Emissa.pl #the command to launch the missa genarator
+
+#txt only
+if [[ $JUST_TODAY_TXT ]]; then
+
+	PLACE=$(pwd)
+	cd $CDUR
+	NOW=$(date +"%m-%d-%Y")
+	if [[ $MISSA ]]; then
+		$EMISSACMD "date=$NOW&command=&version=$RUBRICS&lang2=$BLANG" | html2text -nobs | sed "1,3d" | less
+	else
+
+		if [[ "$HOUR" == "" ]]; then
+			echo "You must specify a individual hour to be presented. Please, use -s <hour>"
+			exit 1
+		fi
+
+		$EOFFICCIUMCMD "date1=$NOW&command=pray$HOUR&version=$RUBRICS&testmode=regular&lang2=$BLANG&votive=$VOTIVE$PRIEST" | \
+			html2text -nobs | tail -n +3 | head -n -3 | sed "5,7d ; s/\&darr;\|\&uarr;//g" | less
+
+	fi
+	cd $PLACE
+	exit 0
+	
+fi
+
+#html only
+if [[ $JUST_TODAY_XHTML ]]; then
+
+	PLACE=$(pwd)
+	cd $CDUR
+	NOW=$(date +"%m-%d-%Y")
+	if [[ $MISSA ]]; then
+		$EMISSACMD "date=$NOW&command=&version=$RUBRICS&lang2=$BLANG" | lynx -stdin
+	else
+
+		if [[ "$HOUR" == "" ]]; then
+			echo "You must specify a individual hour to be presented. Please, use -s <hour>"
+			exit 1
+		fi
+
+		$EOFFICCIUMCMD "date1=$NOW&command=pray$HOUR&version=$RUBRICS&testmode=regular&lang2=$BLANG&votive=$VOTIVE$PRIEST" | lynx -stdin
+
+	fi
+	cd $PLACE
+	exit 0
+	
+fi
+
+HORAS_NAMES=(Matutinum Laudes Prima Tertia Sexta Nona Vespera Completorium)
+
+#This method calls $1 for every hour in a month (the $MONTH and $YEAR variables have to be set).
+#($DAY, $H $FILENAME, $DATE are set accordingly at every invocation.)
+foreachHourInRange() {
+
+	#with too nested iteration the quoting causes chaos
+	#foreachYear "foreachMonthInYear \"foreachDayInMonth foreachHourInDay $1\""
+	#so using this instead
+
+	MONTH_FILES=""
+	YEAR_FILE=""
+
+	PLACE=$(pwd)
+	cd $CDUR
+	for YEAR in $(seq $YEAR_FROM $YEAR_TO); do
+		MONTH_NUM_INDEX=-1 #note we cannot count using MONTH, because it is zero padded (and bash consides it an octal literal)
+		for MONTH in $(seq -w 12); do
+			MONTH_NUM_INDEX=1+$MONTH_NUM_INDEX
+			DAYN=$(cal $MONTH $YEAR|egrep -v [a-z]|wc -w)
+			echo "Generatin breviarium-$MONTH.txt"
+			for DAY in $(seq -w $DAYN); do
+				for H in "${HORAS_NAMES[@]}"; do
+					DATE_SCRIPT=$MONTH-$DAY-$YEAR
+					generateHour
+				done
+			done
+			echo "Writing to breviarium-$MONTH.txt"
+			echo -e "$MONTH_FILES" > "${PLACE}/breviarium-$MONTH.txt"
+			YEAR_FILE="$YEAR_FILES\n$MONTH_FILES"
+			MONTH_FILES=""
+		done
+		echo "Writing to breviarium-$YEAR.txt"
+		echo -e "$YEAR_FILE" > "${PLACE}/breviarium-$YEAR.txt"
+		YEAR_FILE=""
+	done
+	cd $PLACE
+
+}
+
+foreachMassInRange() {
+
+	#with too nested iteration the quoting causes chaos
+	#foreachYear "foreachMonthInYear \"foreachDayInMonth foreachHourInDay $1\""
+	#so using this instead
+
+	MONTH_FILES=""
+	YEAR_FILE=""
+
+	PLACE=$(pwd)
+	cd $CDUR
+	for YEAR in $(seq $YEAR_FROM $YEAR_TO); do
+		MONTH_NUM_INDEX=-1 #note we cannot count using MONTH, because it is zero padded (and bash consides it an octal literal)
+		for MONTH in $(seq -w 12); do
+			MONTH_NUM_INDEX=1+$MONTH_NUM_INDEX
+			DAYN=$(cal $MONTH $YEAR|egrep -v [a-z]|wc -w)
+			echo "Generating missa-$MONTH.txt"
+			for DAY in $(seq -w $DAYN); do
+				DATE_SCRIPT=$MONTH-$DAY-$YEAR
+				generateMass
+			done
+			echo "Writing to missa-$MONTH.txt"
+			echo -e "$MONTH_FILES" > "${PLACE}/missa-$MONTH.txt"
+			YEAR_FILES="$YEAR_FILE\n$MONTH_FILES"
+			MONTH_FILES=""
+		done
+		echo "Writing to missa-$YEAR.txt"
+		echo -e "$YEAR_FILE" > "${PLACE}/missa-$YEAR.txt"
+		YEAR_FILE=""
+	done
+	cd $PLACE
+
+}
+
+generateHour() {
+
+	file=$($EOFFICCIUMCMD "date1=$DATE_SCRIPT&command=pray${HORAS_NAMES[${H}]}&version=$RUBRICS&testmode=regular&lang2=$BLANG&votive=$VOTIVE$PRIEST" | \
+		html2text -nobs | tail -n +3 | head -n -3 | sed "5,7d ; s/\&darr;\|\&uarr;//g")
+	MONTH_FILES="$MONTH_FILES\n$file"
+
+}
+
+generateMass() {
+
+	file=$($EMISSACMD "date=$DATE_SCRIPT&command=&version=$RUBRICS&lang2=$BLANG" | html2text | sed "1,3d")
+	MONTH_FILES="$MONTH_FILES\n$file"
+
+}
+
+generate() {
+	if [[ $MISSA ]]; then
+		echo "Starting to generate mass propers"
+		foreachMassInRange 
+		echo ""
+		echo -e "Finished the generation of mass propers"
+	else
+		echo "Starting to generate hours"
+		foreachHourInRange 
+		echo ""
+		echo -e "Finished the generation of hours"
+	fi
+}
+
+generate

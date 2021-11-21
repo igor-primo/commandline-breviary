@@ -1,0 +1,104 @@
+[Rank]
+S. Venantii Martyris;;Duplex;;3;;vide C2
+
+[Rule]
+vide C2;
+9 lectiones
+
+[Hymnus Vespera]
+v. Venant, le Martyr de Dieu,
+et l’honneur de Camérino,
+vainqueur de son juge et de son bourreau,
+chante plein de joie son triomphe.
+_
+Quant aux années il n’est qu’un enfant,
+mais c’est après avoir supporté les fers, les prisons,
+les coups qu’il est donné en pâture à des lions,
+rendus furieux par une longue privation de nourriture.
+_
+Mais son innocence
+apaise la férocité de ces lions
+qui, oubliant leur rage et leur faim,
+viennent lécher les pieds du Martyr.
+_
+Pendant qu’il est suspendu la tête en bas,
+et contraint de respirer la fumée d’un brasier,
+une torche enflammée
+lui brûle les côtes et les entrailles.
+_
+Gloire soit au Père, au Fils,
+et à vous, Esprit-Saint :
+accordez-nous, par les prières de Venant,
+les joies de la béatitude suprême.
+Amen.
+
+[Oratio]
+O Dieu, qui avez consacré ce jour par le triomphe du bienheureux Venant, Votre Martyr, exaucez les prières de Votre peuple et faites qu’honorant ses mérites, nous imitions la constance de sa foi.
+$Per Dominum
+
+[Hymnus Matutinum]
+v. Athléta Christi nóbilis
+Idóla damnat géntium,
+Deíque amóre sáucius
+Vitæ perícla déspicit.
+_
+Loris revínctus ásperis,
+E rupe præceps vólvitur:
+Spinéta vultum láncinant;
+Per saxa corpus scínditur.
+_
+Dum membra raptant Mártyris,
+Languent siti satéllites;
+Signo crucis Venántius
+E rupe fontes élicit.
+_
+Bellátor o fortíssime,
+Qui pérfidis tortóribus
+E caute præbes póculum,
+Nos rore grátiæ írriga.
+_
+Sit laus Patri, sit Fílio,
+Tibíque, Sancte Spíritus:
+Da per preces Venántii
+Beáta nobis gáudia.
+Amen.
+
+[Lectio4]
+Venantius Camers, quindecim annos natus, cum christianæ religiónis accusarétur apud Antíochum, qui sub Decio imperatóre Camerino præerat, in porta civitátis præsidi se obtulit. Quem ille pollicitatiónibus ac terróribus diu tentátum, flagris cædi et vinculis astringi jussit; sed is mirabíliter ab Angelo solutus, lampadibus póstea aduritur, atque inverso ore, fumo supposito, suspénditur. Ejus constantiam in tormentis demirátus Anastasius Cornicularius, et quod eum ab Angelo íterum solutum cándida veste supra fumum ambulántem vidísset, in Christum credidit; et a beato Porphyrio presbytero cum família baptizatus, paulo post martyrii palmam cum eodem promeruit.
+
+[Lectio5]
+At Venantius præsidi sistitur, et ab eo íterum frustra tentátus ut Christi fidem deséreret, in carcerem conjícitur; quo Attalus præco mittitur, qui ei dicat se quoque christianum fuisse et ei nómini proptérea renuntiásse, quod cognovísset inane esse fidei comméntum, quo Christiáni præséntibus se ábdicant ob vanam futurórum spem. Verum nobilis Christi athleta, callidi hostis insidias non ignorans, diaboli ministrum a se pénitus rejécit. Quare ad præsidem íterum adducto omnes contusi sunt dentes maxillæque confractæ; atque, ita cæsus, in sterquilinium dejícitur. Sed inde ab Angelo quoque ereptus, rursus stetit ante judicem; qui, Venantio adhuc loquente, e tribunali cécidit, et in ea voce, Verus est Venantii Deus, nostros deos destrúite, exclámans exspirávit.
+
+[Lectio6]
+Quod cum præsidi nuntiátum esset, extemplo Venántium leónibus óbjici jussit; qui, naturali feritáte omissa, ad ejus se pedes abjecérunt. Interim ille pópulum Christi fidem édocebat. Quare inde amotus, íterum in carcerem traditur. Cumque postridie præsidi referret Porphyrius, se per visum noctu pópulos, quos Venantius aqua tingebat, claríssima luce fulgéntes, ipsum vero præsidem obscuríssima caligine operátum vidisse; præses, ira incénsus, eum illico cápite plecti imperat, deínde Venántium per loca vépribus et cárduis cónsita trahi usque ad vésperam. Is, cum semiánimis relíctus esset, mane se íterum præsidi præsentávit; cujus jussu statim e rupe præcipitátur. Sed inde étiam divinitus ereptus, denuo per loca aspera ad mille passus trahitur; ubi, milítibus siti æstuántibus, in próxima convalle, ex lápide, in quo et genuum formam relíquit, sicut étiam nunc in ejus ecclésia vidére licet, crucis signo a Venantio facto, aquæ manarunt. Eo miraculo plures permoti in Christum credidérunt, quos omnes præses eo loci una cum Venantio cápite feriri jussit. Fulgura et terræmotus eo témpore ita magni fuére, ut præses aufugeret; qui paucis tamen post diébus, divinam haud valens effugere justítiam, turpíssimam mortem oppétiit. Christiáni interim Venantii et aliórum córpora honorifico loco sepeliérunt: quæ Camerini, in ecclésia Venantio dicata, cóndita adhuc sunt.
+
+[Hymnus Laudes]
+v. Tandis que la nuit disparaît et que
+l’étoile du matin nous annonce l’approche du jour,
+que Venant nous obtienne
+les bienfaits de la lumière bienheureuse.
+_
+Qu’il éloigne de nous l’obscurité du péché
+et la nuit des enfers ;
+qu’il nous désaltère dans la cité céleste
+de la vraie lumière de la Divinité.
+_
+Il a purifié sa patrie
+dans les eaux du baptême sacré,
+et les soldats sur lesquels il a versé l’onde sainte,
+il les a envoyés dans les cieux avec la palme du martyre.
+_
+Maintenant que vous régnez avec les Anges,
+soyez favorable aux vœux de ceux qui vous invoquent :
+bannissez loin de nous tous les crimes
+et mettez en nos âmes la lumière que vous possédez.
+_
+Gloire soit au Père, au Fils,
+et à vous, Esprit-Saint :
+accordez-nous, par les prières de Venant,
+les joies de la béatitude suprême.
+Amen.
+
+[Lectio94]
+Venántius Camers, quíndecim annos natus, christiánæ religiónis accusátus apud Antíochum, qui sub Décio imperatóre Cameríno prǽerat, in porta civitátis prǽsidi se óbtulit. Quem ille, pollicitatiónibus ac terróribus diu tentátum, flagris cædi et vínculis astríngi jussit; e quibus mirabíliter ab Angelo solútus, lampádibus póstea adúritur, atque invérso ore, fumo suppósito, suspénditur. Eídem, ad prǽsidem íterum addúcto, omnes contúsi sunt dentes maxillǽque confráctæ, atque ita cæsus in sterquilínium deícitur. Sed inde ab Angelo eréptus, rursus stetit ante júdicem; qui, Venántio adhuc loquénte, e tribunáli cécidit et in ea voce, Verus est Venántii Deus, nostros deos destrúite, exclámans exspirávit. Demum, post nova et exquisíta torménta, una cum áliis decem gloriósi certáminis cursum cervícibus abscíssis implévit. Quorum córpora christiáni honorífico loco sepeliérunt, quæ Cameríni, in ecclésia Venántio dicáta, cóndita sunt.
+&teDeum

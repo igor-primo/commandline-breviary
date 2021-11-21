@@ -1,0 +1,56 @@
+@Commune/C11
+
+[Capitulum Vespera]
+@CommuneM/C10:Capitulum Vespera
+
+[AntMatutinumM]
+Favus distíllans * lábia tua, Sponsa, mel et lac sub lingua tua: † et odor vestimentórum tuórum sicut odor thuris.;;47
+Fons hortórum, * púteus aquárum vivéntium, † quæ fluunt ímpetu de Líbano.;;84
+Descéndi * in hortum nucum, ut vidérem poma convállium, † et inspícerem, si floruísset vinea, et germinássent mala púnica, allelúja.;;98
+
+[Ant Matutinum 3N]
+Hortus conclúsus * es Dei Génitrix, hortus conclúsus, fons signátus: † surge própera, amíca mea, et veni.
+
+[Ant Matutinum]
+@Commune/C11::1-3
+@Commune/C11::6-7
+@:AntMatutinumM:1
+@Commune/C11::4-5
+@:AntMatutinumM:2
+@Commune/C11::8
+@Commune/C11::11-13
+@:AntMatutinumM:3
+@Commune/C11::9-10
+;;249;250;251
+@Commune/C11::14-15
+
+[Responsory9]
+R. Beata es Virgo Maria, Dei Genitrix, quae credidisti Domino: perfecta sunt in~
+te quae dicta sunt tibi: ecce exaltata es super choros Angelorum:
+* Intercede pro nobis ad Dominum Deum nostrum.
+V. Ave Maria, gratia plena, Dominus tecum.
+R. Intercede pro nobis ad Dominum Deum nostrum.
+&Gloria
+R. Intercede pro nobis ad Dominum Deum nostrum.
+
+[Capitulum Laudes]
+@CommuneM/C10:Capitulum Vespera
+
+[Hymnus Laudes]
+@Commune/C10:HymnusM Laudes
+
+[Responsory Tertia]
+@CommuneM/C10:Responsory Tertia
+
+[Responsory Sexta]
+@CommuneM/C10:Responsory Sexta
+
+[Responsory Nona]
+@CommuneM/C10:Responsory Nona
+
+[LectioE]
+v. Sequéntia sancti Evangélii secúndum Lucam
+!Luc 11:27-28
+11:27 Factum est autem, cum hæc díceret: extóllens vocem quædam múlier de turba dixit illi: Beátus venter qui te portávit, et úbera quæ suxísti.
+11:28 At ille dixit: Quinímmo beáti, qui áudiunt verbum Dei et custódiunt illud.
+$Te decet

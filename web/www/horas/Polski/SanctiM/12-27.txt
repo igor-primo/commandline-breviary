@@ -1,0 +1,14 @@
+[Lectio9]
+@Sancti/12-27:Lectio7:s/; jedno uchyla.*/./s
+
+[Lectio10]
+@Sancti/12-27:Lectio7:s/.*; jedno uchyla/Jedno uchyla/s s/$/~/
+@Sancti/12-27:Lectio8:s/; jedno biczują .*/./s
+
+[Lectio11]
+@Sancti/12-27:Lectio8:s/.*; jedno biczują / Jedno biczują /s s/$/~/
+@Sancti/12-27:Lectio9:s/To tutaj .*//s
+
+[Lectio12]
+@Sancti/12-27:Lectio9:s/.* To tutaj /To tutaj /s
+

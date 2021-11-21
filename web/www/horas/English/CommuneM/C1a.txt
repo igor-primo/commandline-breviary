@@ -1,0 +1,16 @@
+[Lectio7]
+@Commune/C1a:Lectio4:s/And by.*//s
+
+[Lectio8]
+@Commune/C1a:Lectio4:s/.*And by/And by/s s/$/~/
+@Commune/C1a:Lectio5:s/Therefore.*//
+
+[Lectio9]
+@Commune/C1a:Lectio7:s/And no .*//s
+
+[Lectio10]
+@Commune/C1a:Lectio7:s/.* And no /And no /s s/$/~/
+@Commune/C1a:Lectio8:s/Well .*//s
+
+[Lectio11]
+@Commune/C1a:Lectio8:s/.* Well /Well /s
