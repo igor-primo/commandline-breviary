@@ -45,7 +45,7 @@ YEAR_TO=$YEAR_FROM
 PRIEST='' #has to be empty or '&priest=yes'
 VOTIVE='' #='C12' for Parvum B.M.V.
 MISSA='' #=1 to include Mass propers
-CDUR=
+CDUR=/home/igor/brev
 RUBRICS_CODE=1960
 RUBRICS=Rubrics%201960
 RUBRICS_NAME=
@@ -63,7 +63,7 @@ ALL_RUBRICS_NAME=("_Monastic" "_1570" "_1910" "_DA" "_1955" "" "NC")
 YEAR_RE='^[0-9]+$'
 
 #parse parameters
-while getopts "hy:t:pvmr:wbs:" OPTION
+while getopts "hy:t:pvmr:o:wx" OPTION
 do
      case $OPTION in
          h)
@@ -131,7 +131,7 @@ done
 
 #other paths and file names, not specified by parameters
 EOFFICCIUMCMD=$CDUR/EofficiumXhtml.pl #the command to launch the genarator
-EMISSACMD=$CDUR/../../../web/cgi-bin/missa/Emissa.pl #the command to launch the missa genarator
+EMISSACMD=$CDUR/web/cgi-bin/missa/Emissa.pl #the command to launch the missa genarator
 
 #txt only
 if [[ $JUST_TODAY_TXT ]]; then
@@ -207,12 +207,12 @@ foreachHourInRange() {
 					generateHour
 				done
 			done
-			echo "Writing to breviarium-$MONTH.txt"
+			echo "Writing to ${PLACE}/breviarium-$MONTH.txt"
 			echo -e "$MONTH_FILES" > "${PLACE}/breviarium-$MONTH.txt"
 			YEAR_FILE="$YEAR_FILES\n$MONTH_FILES"
 			MONTH_FILES=""
 		done
-		echo "Writing to breviarium-$YEAR.txt"
+		echo "Writing to ${PLACE}/breviarium-$YEAR.txt"
 		echo -e "$YEAR_FILE" > "${PLACE}/breviarium-$YEAR.txt"
 		YEAR_FILE=""
 	done
@@ -241,7 +241,7 @@ foreachMassInRange() {
 				DATE_SCRIPT=$MONTH-$DAY-$YEAR
 				generateMass
 			done
-			echo "Writing to missa-$MONTH.txt"
+			echo "Writing to ${PLACE}/missa-$MONTH.txt"
 			echo -e "$MONTH_FILES" > "${PLACE}/missa-$MONTH.txt"
 			YEAR_FILES="$YEAR_FILE\n$MONTH_FILES"
 			MONTH_FILES=""
@@ -256,7 +256,7 @@ foreachMassInRange() {
 
 generateHour() {
 
-	file=$($EOFFICCIUMCMD "date1=$DATE_SCRIPT&command=pray${HORAS_NAMES[${H}]}&version=$RUBRICS&testmode=regular&lang2=$BLANG&votive=$VOTIVE$PRIEST" | \
+	file=$($EOFFICCIUMCMD "date1=$DATE_SCRIPT&command=pray$H&version=$RUBRICS&testmode=regular&lang2=$BLANG&votive=$VOTIVE$PRIEST" | \
 		html2text -nobs | tail -n +3 | head -n -3 | sed "5,7d ; s/\&darr;\|\&uarr;//g")
 	MONTH_FILES="$MONTH_FILES\n$file"
 
@@ -264,7 +264,7 @@ generateHour() {
 
 generateMass() {
 
-	file=$($EMISSACMD "date=$DATE_SCRIPT&command=&version=$RUBRICS&lang2=$BLANG" | html2text | sed "1,3d")
+	file=$($EMISSACMD "date=$DATE_SCRIPT&command=&version=$RUBRICS&lang2=$BLANG" | html2text -nobs | sed "1,3d")
 	MONTH_FILES="$MONTH_FILES\n$file"
 
 }
