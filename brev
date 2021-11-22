@@ -49,6 +49,8 @@ CDUR=/home/igor/brev
 RUBRICS_CODE=1960
 RUBRICS=Rubrics%201960
 RUBRICS_NAME=
+DATE=$(date +"%m-%d-%Y")
+
 
 HOUR=''
 JUST_TODAY_TXT=1
@@ -63,7 +65,7 @@ ALL_RUBRICS_NAME=("_Monastic" "_1570" "_1910" "_DA" "_1955" "" "NC")
 YEAR_RE='^[0-9]+$'
 
 #parse parameters
-while getopts "hy:t:pvmr:o:wx" OPTION
+while getopts "hy:t:pvmr:o:wxd:" OPTION
 do
      case $OPTION in
          h)
@@ -122,6 +124,10 @@ do
 				exit 1
 			 fi
 			 ;;
+	     d)
+		 	 DATE=$OPTARG
+			 #check if valid
+			 ;;
          ?)
              usage
              exit
@@ -138,9 +144,8 @@ if [[ $JUST_TODAY_TXT ]]; then
 
 	PLACE=$(pwd)
 	cd $CDUR
-	NOW=$(date +"%m-%d-%Y")
 	if [[ $MISSA ]]; then
-		$EMISSACMD "date=$NOW&command=&version=$RUBRICS&lang2=$BLANG" | html2text -nobs | sed "1,3d" | less
+		$EMISSACMD "date=$DATE&command=&version=$RUBRICS&lang2=$BLANG" | html2text -nobs | sed "1,3d" | less
 	else
 
 		if [[ "$HOUR" == "" ]]; then
@@ -148,8 +153,8 @@ if [[ $JUST_TODAY_TXT ]]; then
 			exit 1
 		fi
 
-		$EOFFICCIUMCMD "date1=$NOW&command=pray$HOUR&version=$RUBRICS&testmode=regular&lang2=$BLANG&votive=$VOTIVE$PRIEST" | \
-			html2text -nobs | tail -n +3 | head -n -3 | sed "5,7d ; s/\&darr;\|\&uarr;//g" | less
+		$EOFFICCIUMCMD "date1=$DATE&command=pray$HOUR&version=$RUBRICS&testmode=regular&lang2=$BLANG&votive=$VOTIVE$PRIEST" | \
+			html2text -nobs | tail -n +3 | head -n -3 | sed "s/\&darr;\|\&uarr;//g" | less
 
 	fi
 	cd $PLACE
@@ -162,9 +167,8 @@ if [[ $JUST_TODAY_XHTML ]]; then
 
 	PLACE=$(pwd)
 	cd $CDUR
-	NOW=$(date +"%m-%d-%Y")
 	if [[ $MISSA ]]; then
-		$EMISSACMD "date=$NOW&command=&version=$RUBRICS&lang2=$BLANG" | lynx -stdin
+		$EMISSACMD "date=$DATE&command=&version=$RUBRICS&lang2=$BLANG" | lynx -stdin
 	else
 
 		if [[ "$HOUR" == "" ]]; then
@@ -172,7 +176,7 @@ if [[ $JUST_TODAY_XHTML ]]; then
 			exit 1
 		fi
 
-		$EOFFICCIUMCMD "date1=$NOW&command=pray$HOUR&version=$RUBRICS&testmode=regular&lang2=$BLANG&votive=$VOTIVE$PRIEST" | lynx -stdin
+		$EOFFICCIUMCMD "date1=$DATE&command=pray$HOUR&version=$RUBRICS&testmode=regular&lang2=$BLANG&votive=$VOTIVE$PRIEST" | lynx -stdin
 
 	fi
 	cd $PLACE
@@ -200,7 +204,7 @@ foreachHourInRange() {
 		for MONTH in $(seq -w 12); do
 			MONTH_NUM_INDEX=1+$MONTH_NUM_INDEX
 			DAYN=$(cal $MONTH $YEAR|egrep -v [a-z]|wc -w)
-			echo "Generatin breviarium-$MONTH.txt"
+			echo "Generating breviarium-$MONTH.txt"
 			for DAY in $(seq -w $DAYN); do
 				for H in "${HORAS_NAMES[@]}"; do
 					DATE_SCRIPT=$MONTH-$DAY-$YEAR
@@ -209,7 +213,7 @@ foreachHourInRange() {
 			done
 			echo "Writing to ${PLACE}/breviarium-$MONTH.txt"
 			echo -e "$MONTH_FILES" > "${PLACE}/breviarium-$MONTH.txt"
-			YEAR_FILE="$YEAR_FILES\n$MONTH_FILES"
+			YEAR_FILE="$YEAR_FILE\n$MONTH_FILES"
 			MONTH_FILES=""
 		done
 		echo "Writing to ${PLACE}/breviarium-$YEAR.txt"
@@ -243,7 +247,7 @@ foreachMassInRange() {
 			done
 			echo "Writing to ${PLACE}/missa-$MONTH.txt"
 			echo -e "$MONTH_FILES" > "${PLACE}/missa-$MONTH.txt"
-			YEAR_FILES="$YEAR_FILE\n$MONTH_FILES"
+			YEAR_FILE="$YEAR_FILE\n$MONTH_FILES"
 			MONTH_FILES=""
 		done
 		echo "Writing to missa-$YEAR.txt"
@@ -257,7 +261,9 @@ foreachMassInRange() {
 generateHour() {
 
 	file=$($EOFFICCIUMCMD "date1=$DATE_SCRIPT&command=pray$H&version=$RUBRICS&testmode=regular&lang2=$BLANG&votive=$VOTIVE$PRIEST" | \
-		html2text -nobs | tail -n +3 | head -n -3 | sed "5,7d ; s/\&darr;\|\&uarr;//g")
+		html2text -nobs | tail -n +3 | head -n -3 | sed "s/\&darr;\|\&uarr;//g")
+	#some offices do not have dates attached to them.
+	#make sure to include a date to the beginning of file:
 	MONTH_FILES="$MONTH_FILES\n$file"
 
 }
@@ -265,7 +271,7 @@ generateHour() {
 generateMass() {
 
 	file=$($EMISSACMD "date=$DATE_SCRIPT&command=&version=$RUBRICS&lang2=$BLANG" | html2text -nobs | sed "1,3d")
-	MONTH_FILES="$MONTH_FILES\n$file"
+	MONTH_FILES="$MONTH_FILES\n$DATE_SCRIPT\n$file"
 
 }
 
