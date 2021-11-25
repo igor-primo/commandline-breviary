@@ -22,20 +22,25 @@ OPTIONS:
 
    -v          If specified, generate the Parvum B.M.V. votive office.
 
-   -m          Generate Mass propers in addition to office texts.
+   -m          Generate Mass propers. 
 
    -r RUBRICS  The rubrics to use. Defaults to 1960.
                Supported values are: 1570, 1910, DA, 1955, 1960, Newcal, Dominican, Monastic
 
-   -c FILENAME The cover image to use without path. It must be a file in the data
-               directory. Defaults to "cover.jpg".
+   -o HOUR     Specifies to hour/office to be read.
 
-   -o PATH     The output directory. Defaults to the current directory.
+   -w          Generates all offices of the year grouped in months and writes
+               to txt files. May be combined with -m and with -y and -t.
+
+   -x          Does not extract plain text content from the xhtml file but pipes
+               the xhtml to lynx.
+
+   -d          Specifies the date of the office/mass to be read. The date format is
+               month-day-year, e.g., 01-01-2022. If invalid, brev will print the
+               office/mass of the current day.
 
 EOF
 
- #generation of a bilingual office is not yet fully implemented, so do not document this option until it is implemented.
- #-l      Also generate a second language (e.g. English, Deutsch, Italiano, Magyar, Polski).
 }
 
 #default values for input variables
@@ -95,7 +100,7 @@ do
              ;;
          m)
 	       	 MISSA=1
-	         ;;
+				 ;;
          r)
              RUBRICS_CODE=$OPTARG
              #make sure the value is one of the expected values
@@ -149,7 +154,7 @@ if [[ $JUST_TODAY_TXT ]]; then
 	else
 
 		if [[ "$HOUR" == "" ]]; then
-			echo "You must specify a individual hour to be presented. Please, use -s <hour>"
+			echo "You must specify a individual hour to be presented. Please, use -o <HOUR>"
 			exit 1
 		fi
 
@@ -172,7 +177,7 @@ if [[ $JUST_TODAY_XHTML ]]; then
 	else
 
 		if [[ "$HOUR" == "" ]]; then
-			echo "You must specify a individual hour to be presented. Please, use -s <hour>"
+			echo "You must specify a individual hour to be presented. Please, use -o <HOUR>"
 			exit 1
 		fi
 
@@ -262,8 +267,6 @@ generateHour() {
 
 	file=$($EOFFICCIUMCMD "date1=$DATE_SCRIPT&command=pray$H&version=$RUBRICS&testmode=regular&lang2=$BLANG&votive=$VOTIVE$PRIEST" | \
 		html2text -nobs | tail -n +3 | head -n -3 | sed "s/\&darr;\|\&uarr;//g")
-	#some offices do not have dates attached to them.
-	#make sure to include a date to the beginning of file:
 	MONTH_FILES="$MONTH_FILES\n$file"
 
 }
