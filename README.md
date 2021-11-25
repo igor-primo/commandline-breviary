@@ -1,10 +1,10 @@
 # brev: commandline-breviary
 
 I modified the [Divinum-Officium](https://github.com/DivinumOfficium/divinum-officium) script for generating EPUB files in order 
-to show the office or mass propers in plain text format, serving as a command-line
+to show the Office or Mass Propers in plain text format, serving as a command-line
 program.
 
-The perl script that calculates the office of the day generates the office content
+The perl script that calculates the Office of the day generates the Office content
 in Xhtml format. I use 'html2text' to extract the contents and 'sed' to format it
 a little bit. This may cause some overhead, specially when generating several files.
 While I learn perl scripting this will be the way to go. One may view the files 
