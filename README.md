@@ -88,9 +88,7 @@ variable.
 
 ## dependencies
 
-So far as I know it requires the basic perl modules set that is required
-by a simple GNU/Linux installation. I leave my installed modules at
-the time of writing this for reference if desired.
+Perl modules CGI.pm and LWP/Simple.pm.
 
 ## TODO
 
