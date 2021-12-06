@@ -38,7 +38,7 @@ This is a buggy option for the time being.
 `brev -w`
 
 Generates all Office files of all months of the current year and writes
-them into files with names 'breviarium-$MONTH.txt'. A file for all Offices
+them into files with names 'breviarium-$MONTH.xhtml'. A file for all Offices
 of the year is created. This last file is just the appending of all
 month files in order.
 
@@ -67,10 +67,10 @@ Generates the Office <HOUR> with statements suitable to a priest.
 For example, 'Domine, exaudi orationem meam' is substituted for
 'Dominus vobiscum'.
 
-`brev -y <FIRST_YEAR> -t <LAST_YEAR> -w [-m]`
+`brev -y <FIRST_YEAR> -t <LAST_YEAR> -w`
 
 Generates all the files specified as in '-w' but with the first year
-<FIRST_YEAR> and last year <LAST_YEAR>.
+<FIRST_YEAR> and last year <LAST_YEAR>. Can be combined with -m.
 
 `brev -o <HOUR> -d MONTH-DAY-YEAR`
 
@@ -89,10 +89,6 @@ variable.
 ## dependencies
 
 Perl modules CGI.pm and LWP/Simple.pm.
-
-## TODO
-
-* To use multiprocessing to make generation of text files faster.
 
 ## similar programs
 

@@ -30,7 +30,7 @@ OPTIONS:
    -o HOUR     Specifies to hour/office to be read.
 
    -w          Generates all offices of the year grouped in months and writes
-               to txt files. May be combined with -m and with -y and -t.
+               to xhtml files. May be combined with -m and with -y and -t.
 
    -x          Does not extract plain text content from the xhtml file but pipes
                the xhtml to lynx.
@@ -38,6 +38,9 @@ OPTIONS:
    -d          Specifies the date of the office/mass to be read. The date format is
                month-day-year, e.g., 01-01-2022. If invalid, brev will print the
                office/mass of the current day.
+
+   -c          Specifies number of processes to be used when combined with -w.
+               Defaults to 4.
 
 Humor: Watch out! By using the following program and others similar, you will
 very likely incur excommunication!
@@ -58,6 +61,7 @@ RUBRICS_CODE=1960
 RUBRICS=Rubrics%201960
 RUBRICS_NAME=
 DATE=$(date +"%m-%d-%Y")
+THREADS=4
 
 
 HOUR=''
@@ -73,7 +77,7 @@ ALL_RUBRICS_NAME=("_Monastic" "_1570" "_1910" "_DA" "_1955" "" "NC")
 YEAR_RE='^[0-9]+$'
 
 #parse parameters
-while getopts "hy:t:pvmr:o:wxd:" OPTION
+while getopts "hy:t:pvmr:o:wxd:c:" OPTION
 do
      case $OPTION in
          h)
@@ -136,6 +140,9 @@ do
 		 	 DATE=$OPTARG
 			 #check if valid
 			 ;;
+		 c) 
+		 	 THREADS=$OPTARG
+			 ;;
          ?)
              usage
              exit
@@ -162,7 +169,7 @@ if [[ $JUST_TODAY_TXT ]]; then
 		fi
 
 		$EOFFICCIUMCMD "date1=$DATE&command=pray$HOUR&version=$RUBRICS&testmode=regular&lang2=$BLANG&votive=$VOTIVE$PRIEST" | \
-			html2text -nobs | tail -n +3 | head -n -3 | sed "s/\&darr;\|\&uarr;//g" | less
+			html2text -nobs -ascii | tail -n +3 | head -n -3 | sed "s/\&darr;\|\&uarr;//g" | less
 
 	fi
 	cd $PLACE
@@ -203,30 +210,26 @@ foreachHourInRange() {
 	#so using this instead
 
 	MONTH_FILES=""
-	YEAR_FILE=""
+	ARGS=($@)
 
 	PLACE=$(pwd)
 	cd $CDUR
 	for YEAR in $(seq $YEAR_FROM $YEAR_TO); do
 		MONTH_NUM_INDEX=-1 #note we cannot count using MONTH, because it is zero padded (and bash consides it an octal literal)
-		for MONTH in $(seq -w 12); do
+		for MONTH in $(seq ${ARGS[0]} ${ARGS[1]}); do
 			MONTH_NUM_INDEX=1+$MONTH_NUM_INDEX
 			DAYN=$(cal $MONTH $YEAR|egrep -v [a-z]|wc -w)
-			echo "Generating breviarium-$MONTH.txt"
+			echo "Generating breviarium-$MONTH.xhtml"
 			for DAY in $(seq -w $DAYN); do
 				for H in "${HORAS_NAMES[@]}"; do
 					DATE_SCRIPT=$MONTH-$DAY-$YEAR
 					generateHour
 				done
 			done
-			echo "Writing to ${PLACE}/breviarium-$MONTH.txt"
-			echo -e "$MONTH_FILES" > "${PLACE}/breviarium-$MONTH.txt"
-			YEAR_FILE="$YEAR_FILE\n$MONTH_FILES"
+			echo "Writing to ${PLACE}/breviarium-$MONTH.xhtml"
+			echo -e "$MONTH_FILES" > "${PLACE}/breviarium-$MONTH.xhtml"
 			MONTH_FILES=""
 		done
-		echo "Writing to ${PLACE}/breviarium-$YEAR.txt"
-		echo -e "$YEAR_FILE" > "${PLACE}/breviarium-$YEAR.txt"
-		YEAR_FILE=""
 	done
 	cd $PLACE
 
@@ -239,28 +242,24 @@ foreachMassInRange() {
 	#so using this instead
 
 	MONTH_FILES=""
-	YEAR_FILE=""
+	ARGS=($@)
 
 	PLACE=$(pwd)
 	cd $CDUR
 	for YEAR in $(seq $YEAR_FROM $YEAR_TO); do
 		MONTH_NUM_INDEX=-1 #note we cannot count using MONTH, because it is zero padded (and bash consides it an octal literal)
-		for MONTH in $(seq -w 12); do
+		for MONTH in $(seq ${ARGS[0]} ${ARGS[1]}); do
 			MONTH_NUM_INDEX=1+$MONTH_NUM_INDEX
 			DAYN=$(cal $MONTH $YEAR|egrep -v [a-z]|wc -w)
-			echo "Generating missa-$MONTH.txt"
+			echo "Generating missa-$MONTH.xhtml"
 			for DAY in $(seq -w $DAYN); do
 				DATE_SCRIPT=$MONTH-$DAY-$YEAR
 				generateMass
 			done
-			echo "Writing to ${PLACE}/missa-$MONTH.txt"
-			echo -e "$MONTH_FILES" > "${PLACE}/missa-$MONTH.txt"
-			YEAR_FILE="$YEAR_FILE\n$MONTH_FILES"
+			echo "Writing to ${PLACE}/missa-$MONTH.xhtml"
+			echo -e "$MONTH_FILES" > "${PLACE}/missa-$MONTH.xhtml"
 			MONTH_FILES=""
 		done
-		echo "Writing to missa-$YEAR.txt"
-		echo -e "$YEAR_FILE" > "${PLACE}/missa-$YEAR.txt"
-		YEAR_FILE=""
 	done
 	cd $PLACE
 
@@ -268,28 +267,67 @@ foreachMassInRange() {
 
 generateHour() {
 
-	file=$($EOFFICCIUMCMD "date1=$DATE_SCRIPT&command=pray$H&version=$RUBRICS&testmode=regular&lang2=$BLANG&votive=$VOTIVE$PRIEST" | \
-		html2text -nobs | tail -n +3 | head -n -3 | sed "s/\&darr;\|\&uarr;//g")
+	file=$($EOFFICCIUMCMD "date1=$DATE_SCRIPT&command=pray$H&version=$RUBRICS&testmode=regular&lang2=$BLANG&votive=$VOTIVE$PRIEST")
 	MONTH_FILES="$MONTH_FILES\n$file"
 
 }
 
 generateMass() {
 
-	file=$($EMISSACMD "date=$DATE_SCRIPT&command=&version=$RUBRICS&lang2=$BLANG" | html2text -nobs | sed "1,3d")
+	file=$($EMISSACMD "date=$DATE_SCRIPT&command=&version=$RUBRICS&lang2=$BLANG")
 	MONTH_FILES="$MONTH_FILES\n$DATE_SCRIPT\n$file"
 
 }
 
 generate() {
+
+	if (( THREADS > 12 )); then
+		THREADS=$((THREADS % 12))
+	fi
+
+	case $THREADS in
+		5 | 7)
+			THREADS=$((THREADS-1))
+			;;
+		8)
+			THREADS=$((THREADS-2))
+			;;
+		9)
+			THREADS=$((THREADS-3))
+			;;
+		10)
+			THREADS=$((THREADS-4))
+			;;
+		11)
+			THREADS=$((THREADS-5))
+			;;
+	esac
+	slices=$((12/THREADS))
+			
 	if [[ $MISSA ]]; then
 		echo "Starting to generate mass propers"
-		foreachMassInRange 
+		beginning=1
+		ending=$slices
+		for i in $(seq 1 $THREADS)
+		do
+			foreachMassInRange $beginning $ending &
+			beginning=$((ending+1))
+			ending=$((beginning+slices-1))
+		done
+		wait
 		echo ""
 		echo -e "Finished the generation of mass propers"
 	else
 		echo "Starting to generate hours"
-		foreachHourInRange 
+		beginning=1
+		ending=$slices
+		for i in $(seq 1 $THREADS)
+		do
+			foreachHourInRange $beginning $ending &
+			beginning=$((ending+1))
+			ending=$((beginning+slices-1))
+		done
+		wait
 		echo ""
 		echo -e "Finished the generation of hours"
 	fi
