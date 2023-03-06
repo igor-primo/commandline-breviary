@@ -56,7 +56,7 @@ YEAR_TO=$YEAR_FROM
 PRIEST='' #has to be empty or '&priest=yes'
 VOTIVE='' #='C12' for Parvum B.M.V.
 MISSA='' #=1 to include Mass propers
-CDUR=/home/igor/brev
+CDUR=/home/igor.primo/commandline-breviary
 RUBRICS_CODE=1960
 RUBRICS=Rubrics%201960
 RUBRICS_NAME=
@@ -183,7 +183,7 @@ if [[ $JUST_TODAY_XHTML ]]; then
 	PLACE=$(pwd)
 	cd $CDUR
 	if [[ $MISSA ]]; then
-		$EMISSACMD "date=$DATE&command=&version=$RUBRICS&lang2=$BLANG" | lynx -stdin
+		$EMISSACMD "date=$DATE&command=&version=$RUBRICS&lang2=$BLANG" | lynx -stdin --display_charset=utf-8
 	else
 
 		if [[ "$HOUR" == "" ]]; then
@@ -191,7 +191,7 @@ if [[ $JUST_TODAY_XHTML ]]; then
 			exit 1
 		fi
 
-		$EOFFICCIUMCMD "date1=$DATE&command=pray$HOUR&version=$RUBRICS&testmode=regular&lang2=$BLANG&votive=$VOTIVE$PRIEST" | lynx -stdin
+		$EOFFICCIUMCMD "date1=$DATE&command=pray$HOUR&version=$RUBRICS&testmode=regular&lang2=$BLANG&votive=$VOTIVE$PRIEST" | lynx -stdin --display_charset=utf-8
 
 	fi
 	cd $PLACE
